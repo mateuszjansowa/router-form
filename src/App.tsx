@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getQuestions, Question } from './api';
+import { Typography, Button, Snackbar, Alert } from '@mui/material';
+import { getQuestions, updateQuestionAnswer } from './api';
+import { Question } from './api/types';
 import './App.css';
 
 function App() {
@@ -10,7 +12,6 @@ function App() {
     return setQuestions(question);
   }
 
-  // https://bobbyhadz.com/blog/typescript-http-request-axios
   useEffect(() => {
     fetchQuestions();
   }, []);
@@ -19,7 +20,19 @@ function App() {
     console.log(questions);
   }, [questions]);
 
-  return <div className="App">Hello!</div>;
+  return (
+    <div className="App">
+      <Typography variant="h2">{questions.length > 0 && questions[0].question}</Typography>
+      <Button variant="outlined" type="button" onClick={() => updateQuestionAnswer({ id: 0, answer: 'no tak!' })}>
+        Update
+      </Button>
+      {/* TODO
+      https://github.com/iamhosseindhv/notistack */}
+      <Snackbar open autoHideDuration={2000}>
+        <Alert severity="success">Data downloaded!</Alert>
+      </Snackbar>
+    </div>
+  );
 }
 
 export default App;
