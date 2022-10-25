@@ -3,7 +3,20 @@
     {
       "id": 0,
       "question": "Jak masz na imię?",
-      "answer": "no tak!"
+      "answerType": "input",
+      "answer": "Mateusz"
+    },
+    {
+      "id": 1,
+      "question": "Jaki jest Twój znak zodiaku?",
+      "answerType": "radio",
+      "answer": ""
+    },
+    {
+      "id": 2,
+      "question": "Jakie masz hobby?",
+      "answerType": "checkbox",
+      "answer": ""
     }
   ]
 }

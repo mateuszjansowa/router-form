@@ -1,6 +1,7 @@
 export type Question = {
   id: number;
   question: string;
+  answerType: 'input' | 'radio' | 'checkbox';
 };
 
 export type UpdateQuestionAnswerType = {
